@@ -5,4 +5,6 @@ INSTALL:
 
 1. You have to move the makina folder into the creme folder which contains all the others modules such as activesync, activites, ...
 
-2. And finally (yes, that's all), you must add the module 'creme.opportunity_number' into the INSTALLED_CREME_APPS tuple in your settings file (local_setting.py)
+2. This module is not ready for South yet. Migrations files are not done. So you must disable it by remove or comment 'south' in INSTALLED_DJANGO_APPS.
+
+3. And finally (yes, that's all), you must add the module 'creme.opportunity_number' into the INSTALLED_CREME_APPS tuple in your settings file (local_setting.py)
