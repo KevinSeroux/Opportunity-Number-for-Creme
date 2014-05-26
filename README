@@ -1,11 +1,8 @@
 Opportunity Number for Crème is a module for Crème CRM 1.4.
-It enables to replace the "reference" field when you view, create or edit the
-opportunities by an auto-increment unique integer field whose value can be user-chosen.
+It enables to replace the "reference" field when you view, create or edit the opportunities by an auto-increment unique integer field whose value can be user-chosen.
 
 INSTALL:
 
-1. You have to move the makina folder into the creme folder which contains all
-   the others modules such as activesync, activites, ...
+1. You have to move the makina folder into the creme folder which contains all the others modules such as activesync, activites, ...
 
-2. And finally (yes, that's all), you must add the module 'creme.opportunity_number' into
-   the INSTALLED_CREME_APPS tuple in your settings file (local_setting.py)
+2. And finally (yes, that's all), you must add the module 'creme.opportunity_number' into the INSTALLED_CREME_APPS tuple in your settings file (local_setting.py)
