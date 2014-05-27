@@ -1,10 +1,18 @@
 # -*- coding: utf-8 -*-
 from creme.opportunities.models.opportunity import Opportunity
 
-def add_opportunity_init(form_instance):
+def place_opportunity_number_field(fields):
 
+    referenceFieldIndex = fields.keyOrder.index("reference")
+    opportunityNumberFieldIndex = fields.keyOrder.index("opportunity_number")
+
+    fields.keyOrder.insert(referenceFieldIndex, fields.keyOrder.pop(opportunityNumberFieldIndex))
     # We don't need to display the reference field, we already have the opportunity_number
-    del form_instance.fields["reference"]
+    del fields["reference"]
+    
+
+def add_opportunity_init(form_instance):
+    place_opportunity_number_field(form_instance.fields)
 
     # To retrieve the last opportunity number in the db
     try:
@@ -18,6 +26,4 @@ def add_opportunity_init(form_instance):
 
 
 def edit_opportunity_init(form_instance):
-
-    # We don't need to display the reference field, we already have the opportunity_number
-    del form_instance.fields["reference"]
+    place_opportunity_number_field(form_instance.fields)
