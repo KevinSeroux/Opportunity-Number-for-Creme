@@ -3,7 +3,7 @@ It enables to replace the "reference" field when you view, create or edit the op
 
 INSTALL:
 
-1. You have to move the makina folder into the creme folder which contains all the others modules such as activesync, activites, ...
+1. You have to move the opportunity_number folder into the creme folder which contains all the others modules such as activesync, activites, ...
 
 2. This module is not ready for South yet. Migrations files are not done. So you must disable it by remove or comment 'south' in INSTALLED_DJANGO_APPS.
 
