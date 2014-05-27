@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from opportunity import MakinaOpportunity
+from opportunity import CustomOpportunity

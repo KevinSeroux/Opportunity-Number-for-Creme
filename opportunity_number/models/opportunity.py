@@ -6,10 +6,10 @@ from creme.opportunities.models.opportunity import Opportunity
 from creme.creme_core.utils.contribute_to_model import contribute_to_model
 from django.utils.translation import ugettext_lazy as _
 
-class MakinaOpportunity(Model):
+class CustomOpportunity(Model):
     opportunity_number = PositiveIntegerField(_("Opportunity number"), unique=True)
 
     class Meta:
         abstract = True
 
-contribute_to_model(MakinaOpportunity, Opportunity)
+contribute_to_model(CustomOpportunity, Opportunity)
