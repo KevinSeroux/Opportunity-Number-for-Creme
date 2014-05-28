@@ -1,4 +1,2 @@
-- Unit Tests
-- Reference field is still display in the list view and opportunity number field is still at the bottom of the bloc
-- Setup migrations files (South)
-- 
+- Some unit tests
+- Reference field is still display in the list view and opportunity number field is still at the bottom of the block
