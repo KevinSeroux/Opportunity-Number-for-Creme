@@ -1,4 +1,5 @@
 Opportunity Number for Crème is a module for Crème CRM 1.4.
+http://www.cremecrm.com/
 
 It enables to replace the "reference" field when you view, create or edit the opportunities by an auto-increment unique integer field whose value can be user-chosen.
 
@@ -34,6 +35,21 @@ Our migration file is now created.
 7 - If you are in the situation explained in the step 3 (data migrations), correct all the opportunity number with any software you want. The opportunity numbers must not be duplicated otherwise the next step will not works. Then reset unique=True for the field.
 
 8 - The module is ready, you can now launch Crème.
+
+
+APPEARANCE:
+
+The module opportunities provide 4 views to:
+1 - Display the portal of the opportunities
+2 - Display the list of the opportunities
+3 - Display the details of an opportunity
+4 - Create or edit an opportunity
+
+By default, the reference field is always displayed on the detail view. The portal, the list and the view to create or edit (thanks to the place_opportunity_number_field function in opportunity_number/forms/opportunity.py) doesn't. So I recommend you to create your own custom block (with the Crème interface), remove the reference field and place the opportunity number just after the opportunity name. Then edit the opportunity block in Types of configured ressources (not sure about the translation) and replace amoung the blocks to display at left, the informations about the opportunity by your custom blocks.
+
+For more information (in french), see:
+    doc/fr/CREME_notion IHM.pdf
+    http://www.cremecrm.com/forum/viewtopic.php?f=14&t=599
 
 
 TROUBLESHOOTINGS:

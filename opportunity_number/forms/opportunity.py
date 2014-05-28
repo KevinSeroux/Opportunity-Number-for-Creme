@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from creme.opportunities.models.opportunity import Opportunity
 
+"""This function allows the opportunity number field to take the place of the reference field
+when you create or edit an opportunity"""
 def place_opportunity_number_field(fields):
 
     referenceFieldIndex = fields.keyOrder.index("reference")
