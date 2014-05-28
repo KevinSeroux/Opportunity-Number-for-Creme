@@ -1,10 +1,43 @@
 Opportunity Number for Crème is a module for Crème CRM 1.4.
+
 It enables to replace the "reference" field when you view, create or edit the opportunities by an auto-increment unique integer field whose value can be user-chosen.
+
 
 INSTALL:
 
 1. You have to move the opportunity_number folder into the creme folder which contains all the others modules such as activesync, activites, ...
 
-2. This module is not ready for South yet. Migrations files are not done. So you must disable it by remove or comment 'south' in INSTALLED_DJANGO_APPS.
+2 - Add the module 'creme.opportunity_number' into the INSTALLED_CREME_APPS tuple in your settings file (local_setting.py).
 
-3. And finally (yes, that's all), you must add the module 'creme.opportunity_number' into the INSTALLED_CREME_APPS tuple in your settings file (local_setting.py)
+Now, let's create the migration file.
+
+3 - If you already have rows in your opportunities_opportunity table you must allow duplicated values in opportunity_number/models/opportunity.py line 10. Think to reset to True at the end of the data migration. You should get
+    opportunity_number = PositiveIntegerField(_("Opportunity number"), unique=False)
+
+
+4. Run the command : "python2.7 manage.py schemamigration opportunities --auto" and you'll get:
+
+   ? The field 'Opportunity.opportunity_number' does not have a default specified, yet is NOT NULL.
+   ? Since you are adding this field, you MUST specify a default
+   ? value to use for existing rows. Would you like to:
+   ?  1. Quit now, and add a default to the field in models.py
+   ?  2. Specify a one-off value to use for existing columns now
+   ? Please select a choice:
+
+5 - Select the second option and write the default value to write for all the rows (not important if your table is empty).
+
+Our migration file is now created.
+
+6 - If you're also installing Crème, refer you to https://bitbucket.org/hybird/creme_crm-1.4/overview
+    If you just want to migrate data, run "python2.7 manage.py migrate opportunities"
+
+7 - If you are in the situation explained in the step 3 (data migrations), correct all the opportunity number with any software you want. The opportunity numbers must not be duplicated otherwise the next step will not works. Then reset unique=True for the field.
+
+8 - The module is ready, you can now launch Crème.
+
+
+TROUBLESHOOTINGS:
+
+- If when you try to create create the migration file, you get this following error "ValueError: South does not support on_delete with SET(function) as values.". Comment the line 70 in creme_core/models/fields.py JUST for the creation. And try again. You must restore it after that. This problem is known for the Creme developers. See (in french sorry) :
+  http://www.cremecrm.com/forum/viewtopic.php?f=6&t=563&start=10#p632
+  http://www.cremecrm.com/forum/viewtopic.php?f=9&t=608

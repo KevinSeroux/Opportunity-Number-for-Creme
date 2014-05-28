@@ -7,6 +7,8 @@ from creme.creme_core.utils.contribute_to_model import contribute_to_model
 from django.utils.translation import ugettext_lazy as _
 
 class CustomOpportunity(Model):
+    # If you want to process to a datas migration set unique=False while you're setting,
+    # opportunity numbers, then restore it
     opportunity_number = PositiveIntegerField(_("Opportunity number"), unique=True)
 
     class Meta:
