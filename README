@@ -4,6 +4,15 @@ http://www.cremecrm.com/
 It enables to replace the "reference" field when you view, create or edit the opportunities by an auto-increment unique integer field whose value can be user-chosen.
 
 
+REMARK AND CONCLUSION OF THE PROJECT:
+
+The fact to solve the need to have an auto-incremented positive number field for some companies by creating a python-coded module is very not user-friendly. It requires a developer and it should be able to do by a non-programmer administrator.
+
+=> So the solution is to develop a feature to graphically-enable it <=
+
+Graphically, the possibility to change the fields order when you create or edit an opportunity and set some properties such as auto-increment is not available yet.
+
+
 INSTALL:
 
 1. You have to move the opportunity_number folder into the creme folder which contains all the others modules such as activesync, activites, ...
