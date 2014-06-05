@@ -3,6 +3,7 @@
 # Inspired from
 # http://www.cremecrm.com/forum/viewtopic.php?f=6&t=563&start=10#p629
 
+from django.db.models.signals import pre_save
 from django.db.models import Model, PositiveIntegerField
 from django.utils.translation import ugettext_lazy as _
 from creme.creme_core.utils.contribute_to_model import contribute_to_model, \
@@ -39,3 +40,5 @@ def slot_pre_save(sender, instance, **kwargs):
             newOpportunityNumber = 0
    
         instance.opportunity_number = newOpportunityNumber
+
+pre_save.connect(slot_pre_save, sender=Opportunity)
