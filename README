@@ -21,7 +21,7 @@ INSTALL:
 
 Now, let's create the migration file.
 
-3 - If you already have rows in your opportunities_opportunity table you must allow duplicated values in opportunity_number/models/opportunity.py line 10. Think to reset to True at the end of the data migration. You should get
+3 - If you already have rows in your opportunities_opportunity table you must allow duplicated values in opportunity_number/models/opportunity.py line 20. Think to reset to True at the end of the data migration. You should get
     opportunity_number = PositiveIntegerField(_("Opportunity number"), unique=False)
 
 4. Run the command : "python2.7 manage.py schemamigration opportunities --auto" and you'll get:
